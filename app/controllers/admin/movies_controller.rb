@@ -14,8 +14,23 @@ class Admin::MoviesController < ApplicationController
       flash[:success] = '登録が成功しました！'
       redirect_to admin_movies_path 
     else
-      flash[:error] = "クライアントを保存できませんでした"
+      flash[:error] = "保存できませんでした"
       render 'new'
+    end
+  end
+
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      flash[:success] = '更新が成功しました！'
+      redirect_to admin_movies_path 
+    else
+      flash[:error] = "保存できませんでした"
+      render 'edit'
     end
   end
 
