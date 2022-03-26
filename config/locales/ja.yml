@@ -1,0 +1,11 @@
+ja:
+ activerecord:
+   models:
+    movie: "映画"
+   attributes:
+    movie:
+     name: "映画タイトル"
+     year: "公開年"
+     is_showing: "上映中か"
+     description: "概要"
+     image_url: "画像URL"
