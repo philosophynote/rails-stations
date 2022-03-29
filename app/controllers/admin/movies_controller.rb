@@ -26,8 +26,19 @@ class Admin::MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
-      flash[:success] = '更新が成功しました！'
+      flash[:success] = '更新に成功しました！'
       redirect_to admin_movies_path 
+    else
+      flash[:error] = "保存できませんでした"
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    if @movie.destroy
+      flash[:success] = '削除に成功しました！'
+      redirect_to admin_movies_path   
     else
       flash[:error] = "保存できませんでした"
       render 'edit'
