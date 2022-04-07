@@ -35,8 +35,9 @@
           </tr>
       </table>
       <div class="d-flex flex-row">
-      <%= f.submit "更新", class: "btn btn-primary" %>
-      <%= button_to '削除', admin_movie_path(@movie), { method: :delete, data: {confirm: '削除してもよろしいですか？'}, class: 'btn btn-danger' }  %>
+        <%= f.submit "更新", class: "btn btn-primary" %>
+        <%= button_to '削除', admin_movie_path(@movie), { method: :delete, data: {confirm: '削除してもよろしいですか？'}, class: 'btn btn-danger' }  %>
+      </div>
     <% end %>
   </div>
 </div>  

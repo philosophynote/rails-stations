@@ -39,7 +39,6 @@ RSpec.describe MoviesController, type: :controller do
         selected_movie_by_name = create(:movie, name: keyword)
         selected_movie_by_description = create(:movie, description: keyword)
         get :index, params: { keyword: keyword }
-
         expect(response.body).to include(selected_movie_by_name.name)
         expect(response.body).to include(selected_movie_by_description.name)
         expect(response.body).to not_include(@movies[0].name)
